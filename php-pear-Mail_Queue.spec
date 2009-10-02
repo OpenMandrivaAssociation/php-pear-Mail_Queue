@@ -2,10 +2,12 @@
 %define		_subclass	Queue
 %define		upstream_name	%{_class}_%{_subclass}
 
+%define		_requires_exceptions pear(creole/Creole.php)
+
 Summary:	Put mails in queue and send them later in background
 Name:		php-pear-%{upstream_name}
 Version:	1.2.3
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/Mail_Queue/
