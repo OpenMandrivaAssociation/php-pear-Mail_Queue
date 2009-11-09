@@ -7,7 +7,7 @@
 Summary:	Put mails in queue and send them later in background
 Name:		php-pear-%{upstream_name}
 Version:	1.2.3
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/Mail_Queue/
@@ -44,14 +44,18 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 %post
+%if %mdkversion < 201000
 pear install --nodeps --soft --force --register-only \
     %{_datadir}/pear/packages/%{upstream_name}.xml >/dev/null || :
+%endif
 
 %preun
+%if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
         %{upstream_name} >/dev/null || :
 fi
+%endif
 
 %clean
 rm -rf %{buildroot}
