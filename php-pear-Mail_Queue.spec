@@ -5,8 +5,8 @@
 %define		_requires_exceptions pear(creole/Creole.php)
 
 Name:		php-pear-%{upstream_name}
-Version:	1.2.3
-Release:	%mkrel 4
+Version:	1.2.6
+Release:	%mkrel 1
 Summary:	Put mails in queue and send them later in background
 License:	PHP License
 Group:		Development/PHP
