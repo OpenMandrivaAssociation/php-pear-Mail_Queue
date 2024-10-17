@@ -8,7 +8,7 @@ Release:	4
 Summary:	Put mails in queue and send them later in background
 License:	PHP License
 Group:		Development/PHP
-URL:		http://pear.php.net/package/Mail_Queue/
+URL:		https://pear.php.net/package/Mail_Queue/
 Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
